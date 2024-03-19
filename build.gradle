@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'mars.hatton.jsp'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // Servlet API
+    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+
+    // JSP API
+    compileOnly 'javax.servlet:jstl:1.2'
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+war {
+    archiveFileName.set('HelloJSP.war')
+}
+
+test {
+    useJUnitPlatform()
+}
